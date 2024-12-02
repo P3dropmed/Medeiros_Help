@@ -1,0 +1,447 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Fundo da página */    
+    color: #3d3a49;
+}
+
+/* Estilo comum do header e footer */
+header, footer {
+    background-color:#3d3a49;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Logo */
+.logo img {
+    height: 99px; /* Ajuste a altura do logo conforme necessário */
+}
+
+/* Navegação */
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo dos botões */
+.btn {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* ======================================= */
+/* Estilos específicos para a Página Principal */
+/* ======================================= */
+.page-index main {
+    padding: 20px;
+}
+
+/* Carrossel de Imagens */
+#carrossel {
+    margin: 10px 0; /* Espaço acima e abaixo do carrossel */
+    text-align: center;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1500px; /* Largura máxima do carrossel */
+    margin: 0 auto; /* Centraliza o carrossel */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1.5s ease;
+}
+
+.slide {
+    min-width: 100%; /* Cada slide ocupa 100% do container */
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Mantém a proporção */
+    max-height: 300px; /* Altura máxima das imagens para visualização adequada */
+    object-fit: cover; /* Cobre todo o espaço da div mantendo a proporção */
+}
+
+input[type="radio"] {
+    display: none; /* Oculta os botões de rádio */
+}
+
+.navegacao {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #7860e7;
+    border-radius: 50%;
+}
+
+input#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+input#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+input#slide1:checked ~ .navegacao .nav:nth-child(1),
+input#slide2:checked ~ .navegacao .nav:nth-child(2),
+input#slide3:checked ~ .navegacao .nav:nth-child(3) {
+    background: #007bff; /* Cor do indicador ativo */
+}
+
+/* Descrição do site */
+.descricao-site {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.descricao-texto {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.descricao-imagem {
+    flex: 1;
+}
+
+.descricao-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+* Depoimentos */
+#depoimentos {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #f0e2e2; /* Fundo branco */
+    padding: 20px;
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.depoimento {
+    display: flex; /* Flexbox para alinhar imagem e texto */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #272020; /* Borda leve */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: transform 0.3s; /* Animação ao passar o mouse */
+}
+
+.depoimento:hover {
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.depoimento img {
+    width: 170px; /* Largura da imagem */
+    height: 170px; /* Altura da imagem */
+    border-radius: 50%; /* Imagens redondas */
+    margin-right: 15px; /* Espaço à direita da imagem */
+}
+
+.nome {
+    font-weight: bold; /* Nome em negrito */
+    margin-top: 10px; /* Espaço acima do nome */
+}
+
+.texto {
+    font-style: italic; /* Texto do depoimento em itálico */
+    color: #555; /* Cor do texto mais suave */
+}
+/* ======================================= */
+/* Estilos específicos para a Página de Grupos de Apoio */
+/* ======================================= */
+.page-grupo .grupos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os grupos */
+    justify-content: center; /* Centraliza os grupos horizontalmente */
+}
+
+.page-grupo .grupo {
+    display: flex;
+    flex-direction: column; /* Alinha a imagem e a informação em coluna */
+    flex: 1 1 calc(33.33% - 20px); /* Ajusta cada grupo para ocupar 33.33% da largura */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center; /* Centraliza o texto dentro dos grupos */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    background-color:#5a5374;
+    color: #fff;
+}
+
+.page-grupo .grupo-imagem {
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+.page-grupo .grupo-imagem img {
+    width: 100%; /* Mantém a imagem dentro do espaço da coluna */
+    height: 250px; /* Mantém a proporção */
+    max-height: 270px; /* Define uma altura máxima */
+    border-radius: 8px;
+}
+/* ======================================= */
+/* Estilos específicos para a Página Sobre Nós */
+/* ======================================= */
+.page-sobre-nos main {
+    padding: 20px;
+}
+
+#sobre-nos {
+    margin-top: 20px;
+}
+
+.descricao-container {
+    display: flex; /* Utiliza flexbox para alinhar a imagem e texto */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.sobre-imagem {
+    width: 150px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.descricao {
+    flex: 1; /* Faz o texto ocupar o espaço restante */
+}
+
+/* ======================================= */
+/* Estilos para a Página de Busque Ajuda */
+/* ======================================= */
+
+.page-busca-ajuda main {
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif; /* Altera para Montserrat */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    color: #333; /* Cor do texto mais suave */
+}
+
+#busque-ajuda {
+    margin-top: 20px;
+}
+
+.tipo-ajuda {
+    margin-bottom: 20px;
+}
+
+.tipo-ajuda input {
+    display: none; /* Oculta o checkbox */
+}
+
+.tipo-ajuda label {
+    display: block;
+    background-color: #252525;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.1em; /* Aumenta o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+}
+
+.tipo-ajuda label:hover {
+    background-color: #0056b3;
+}
+
+.panel {
+    padding: 15px; /* Aumenta o espaçamento interno */
+    display: none; /* Inicialmente escondido */
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+}
+
+.panel p {
+    margin: 0; /* Remove margens do parágrafo */
+    color: #555; /* Texto do painel em uma cor mais suave */
+}
+
+.tipo-ajuda input:checked + label + .panel {
+    display: block; /* Exibe o painel quando o checkbox está marcado */
+}
+
+/* ======================================= */
+/* Estilo geral para seções */
+/* ======================================= */
+section {
+    margin-bottom: 40px;
+    text-align: center; /* Centraliza o texto das seções */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+p {
+    margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
+}
+/* ======================================= */
+/* Estilo geral para NA */
+/* Estilos da Página de Narcóticos */
+/* ======================================= */
+.narcoticos {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #3d3a49;
+}
+
+.narcoticos header {
+    background: #3d3a49;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.narcoticos .logo img {
+    max-width: 150px; /* Largura máxima do logo */
+}
+
+.narcoticos nav {
+    margin: 20px 0;
+}
+
+.narcoticos nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.narcoticos nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.narcoticos nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.narcoticos nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.narcoticos .header-info h2 {
+    margin: 10px 0 5px;
+}
+
+.narcoticos main {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.narcoticos .content {
+    display: flex; /* Flex para alinhar texto e imagem */
+    width: 100%;
+}
+
+.narcoticos .text-content {
+    flex: 1; /* O texto ocupa o restante */
+    padding-right: 20px;
+}
+
+.narcoticos .image-content {
+    display: flex; /* Garante que a imagem se alinhe corretamente */
+}
+
+.narcoticos .image-content img {
+    max-width: 200px; /* Limita a largura da imagem */
+    height: auto; /* Mantém a proporção */
+}
+
+.narcoticos footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #3d3a49;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.narcoticos footer p {
+    margin: 0;
+}
